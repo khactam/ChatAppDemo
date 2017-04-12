@@ -1,0 +1,25 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-calm">
+      <h1 class="title">Login</h1>
+      <a class="button button-dark button-clear" ng-click="modal.hide()">Cancel</i></a>
+    </ion-header-bar>
+    <ion-content>
+      <div class="card">
+          <form ng-submit="doLogin()">
+            <div class="list">
+              <label class="item item-input">
+                <span class="input-label">Username</span>
+                <input id="loginFocus" type="text" ng-model="loginData.username" ng-change="addUsername(loginData.username)">
+              </label>
+              <label class="item item-input">
+                <span class="input-label">Password</span>
+                <input type="password" ng-model="loginData.password" ng-change="addPassword(loginData.password)">
+              </label>
+              <label class="item">
+                <button class="button button-outline button-positive" type="submit">Log in</button>
+              </label>
+            </div>
+          </form>
+      </div>
+    </ion-content>
+</ion-modal-view>

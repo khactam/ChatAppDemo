@@ -1,0 +1,42 @@
+<ion-view hide-nav-bar="true">
+<ion-header-bar class="bar-calm">
+  <h1 style="text-align: center;" class="title">Groups</h1>
+    <a class="button" ng-click="openModal()"><i class="icon ion-plus"></i></a>
+</ion-header-bar>
+  <ion-content class="has-header">
+<!--       <div class="list animate-fade-slide-in-right" ng-if="$root.loggedIn">
+      <a class="item item-icon-left chat-item item-remove-animate " ng-repeat="group in chatGroups" href="#/tab/group/{{group.id}}">
+        <i class="icon ion-chatbox"></i>
+        {{group.name}}
+      </a>
+      </div> -->
+      <ion-list>
+        <ion-item ng-if="$root.loggedIn" class="item-remove-animate item item-icon-left chat-item item-icon-right chat-item " ng-repeat="group in chatGroups track by $index" type="item-text-wrap"  href="#/tab/group/{{group.id}}">
+          <i class="icon ion-left ion-chatbox"></i>
+            {{group.name}}
+          <i class="icon ion-chevron-right icon-accessory"></i>
+
+          <ion-option-button class="button-assertive" ng-click="remove(group)">
+            Delete
+          </ion-option-button>
+        </ion-item>
+        <ion-item ng-if="!$root.loggedIn" class="item-remove-animate item item-icon-left chat-item item-icon-right chat-item " ng-repeat="group in chatGroups track by $index" type="item-text-wrap"  href="#/tab/group/{{group.id}}">
+          <i class="icon ion-left ion-chatbox"></i>
+            {{group.name}}
+          <i class="icon ion-chevron-right icon-accessory"></i>
+
+          <ion-option-button class="button-assertive" ng-click="remove(chat)">
+            Delete
+          </ion-option-button>
+        </ion-item>
+      </ion-list>
+<!--       <div class="list animate-fade-slide-in-right" ng-if="!$root.loggedIn">
+      <a class="item item-icon-left chat-item item-remove-animate" ng-repeat="group in chatGroups" href="#/tab/group/{{group.id}}" ng-show="group.anonymous == true">
+        <i class="icon ion-chatbox"></i>
+        {{group.name}}
+      </a>
+      </div> -->
+  </ion-content>
+</ion-view>
+
+

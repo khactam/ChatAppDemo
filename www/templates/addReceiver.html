@@ -1,0 +1,18 @@
+<ion-modal-view>
+    <ion-header-bar class="bar bar-calm">
+      <h1 class="title">Choose person to chat</h1>
+      <a class="button button-dark button-clear" ng-click="modal.hide()">Cancel</i></a>
+    </ion-header-bar>
+    <ion-content>
+      <div class="card">
+          <ion-list>
+            <ion-radio ng-model="memberToChat" ng-value="member" ng-repeat="member in membersToChat" ng-change="addMemberToChat(member)">{{member.nick}}</ion-radio>
+          </ion-list>
+
+      </div>
+      <div class="float-right"> 
+      <a class="button button-block button-calm" ng-click="saveMemberToChat(); modal.hide()">Save</a>
+      </div>
+     
+    </ion-content>
+</ion-modal-view>
